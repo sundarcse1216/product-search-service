@@ -22,7 +22,7 @@ Product Search Service
 ## 2. Insert Product
     Endpoint: /products
     Method: POST
-    Desc: Insert product
+    Description: Insert product
     
     Request:
     Body:
@@ -41,7 +41,7 @@ Product Search Service
 
     Endpoint: /products/search/{keyword}
     Method: GET
-    Desc: Get all the products
+    Description: Get all the products
     
     Response:
     Http Code: 200
@@ -52,7 +52,7 @@ Product Search Service
         }
 ### Note:
 1. Search keyword is case in sensitive
-2. Did this as per requirement. But for searching elasticsearch will be more efficient than RDBMS.
+2. Developed this API as per requirement. But for searching elasticsearch will be more efficient than RDBMS.
 
 
 ## 4. Get Products
@@ -86,7 +86,7 @@ Product Search Service
 ## 6. Insert Category
     Endpoint: /categories
     Method: POST
-    Desc: Insert category
+    Description: Insert category
     
     Request:
     Body:
@@ -104,7 +104,7 @@ Product Search Service
 ## 7. Get Category by ID
     Endpoint: /categories/{id}
     Method: GET
-    Desc: Get category by id
+    Description: Get category by id
     
     Response:
     Http Code: 200

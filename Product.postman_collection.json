@@ -7,21 +7,9 @@
 	"item": [
 		{
 			"name": "check_app_status",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"OnePlus Nord CE 2\",\n    \"price\": 300,\n    \"status\": true,\n    \"brand\": \"OnePlus\",\n    \"tags\": [\n        {\n            \"name\": \"Blue\",\n            \"description\": \"This is blue color product\"\n        }\n    ],\n    \"categories\": [\n        {\n            \"name\": \"Mobile\",\n            \"subCategories\": [\n                {\n                    \"name\": \"SmartPhone\"\n                }\n            ]\n        }\n    ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
 					"raw": "http://localhost:8080/app/status",
 					"protocol": "http",
@@ -71,7 +59,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/products/search/werewr",
+					"raw": "http://localhost:8080/products/search/blue",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -80,7 +68,7 @@
 					"path": [
 						"products",
 						"search",
-						"werewr"
+						"blue"
 					]
 				}
 			},

@@ -1,0 +1,24 @@
+Products
+id(PK)
+name
+price
+status
+
+
+Categories
+id(PK)
+productId(FK)
+name
+
+
+SubCategories
+id (PK)
+name
+categId(FK)
+
+
+Tags
+id (PK)
+name
+desc
+productId (FK)

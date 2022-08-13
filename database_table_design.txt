@@ -1,24 +1,29 @@
-Products
-id(PK)
+Table: products
+----------------
+product_id (PK)
 name
+brand
 price
 status
 
 
-Categories
-id(PK)
-productId(FK)
+Table: categories
+-------------------
+category_id (PK)
 name
+product_id (FK)
 
 
-SubCategories
-id (PK)
+Table: sub_categories
+--------------------
+sub_category_id (PK)
 name
-categId(FK)
+category_id (FK)
 
 
-Tags
-id (PK)
+Table: tags
+----------
+tag_id (PK)
 name
-desc
-productId (FK)
+description
+product_id (FK)

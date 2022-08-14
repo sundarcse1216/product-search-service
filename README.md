@@ -53,6 +53,7 @@ Product Search Service
 ### Note:
 1. Search keyword is case in sensitive
 2. Developed this API as per requirement. But for searching elasticsearch will be more efficient than RDBMS.
+3. <a href="https://github.com/sundarcse1216/product-search/tree/featute/products">Elasticsearch project</a>
 
 
 ## 4. Get Products

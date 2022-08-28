@@ -1,12 +1,15 @@
 package com.xyz.product.service;
 
 import com.xyz.product.dto.Search;
+import com.xyz.product.model.Categories;
 import com.xyz.product.model.Products;
+import com.xyz.product.model.SubCategories;
+import com.xyz.product.model.Tags;
 import com.xyz.product.repository.ProductRepository;
 import com.xyz.product.response.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.net.HttpURLConnection;
 import java.util.List;
@@ -22,6 +25,7 @@ public class ProductService {
     @Autowired
     ApiResponse apiResponse;
 
+    @Transactional
     public ApiResponse getProductsSearch(String keyword) {
         List<Search> searchResult = productRepository.productSearch(keyword);
         if (Objects.nonNull(searchResult) && !searchResult.isEmpty()) {
@@ -58,11 +62,20 @@ public class ProductService {
         return apiResponse;
     }
 
-    @Modifying
-    public ApiResponse saveProduct(Products products) {
-        Products product = productRepository.save(products);
+    @Transactional
+    public ApiResponse saveProduct(Products product) {
+        for (Categories category : product.getCategories()) {
+            category.setProduct(product);
+            for (SubCategories subCategory : category.getSubCategories()) {
+                subCategory.setCategory(category);
+            }
+        }
+        for (Tags tag : product.getTags()) {
+            tag.setProduct(product);
+        }
+        Products SaveProduct = productRepository.save(product);
         apiResponse.setCode(HttpURLConnection.HTTP_ACCEPTED);
-        apiResponse.setMessage(product);
+        apiResponse.setMessage(SaveProduct);
         return apiResponse;
     }
 }

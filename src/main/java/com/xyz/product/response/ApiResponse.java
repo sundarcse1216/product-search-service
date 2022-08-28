@@ -12,7 +12,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Setter
 @Getter
-@Component
 public class ApiResponse implements Serializable {
 
     private int code;

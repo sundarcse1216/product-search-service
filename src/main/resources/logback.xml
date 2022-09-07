@@ -5,14 +5,14 @@
 
     <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%level] [%logger] - %msg%n</pattern>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%X{correlationId}] [%level] [%logger] - %msg%n</pattern>
         </encoder>
     </appender>
 
     <appender name="DayRollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_FILE_PATH}</file>
         <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%level] [%logger] - %msg%n</pattern>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%X{correlationId}] [%level] [%logger] - %msg%n</pattern>
         </encoder>
 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -25,7 +25,7 @@
 <!--    <appender name="SizeRollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
 <!--        <file>${LOG_FILE_PATH}</file>-->
 <!--        <encoder>-->
-<!--            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%level] [%logger] - %msg%n</pattern>-->
+<!--            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%X{correlationId}] [%level] [%logger] - %msg%n</pattern>-->
 <!--        </encoder>-->
 
 <!--        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">-->
